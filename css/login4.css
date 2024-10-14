@@ -303,7 +303,7 @@ input {
 }
 
 .overlay {
-  background-image: url(/img/brujo.jpg);
+  background-image: url(../img/brujo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
