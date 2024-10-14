@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro / Iniciar sesión</title>
+    <link rel="stylesheet" href="/Practicas/css/login2.css">
+</head>
+
+<body>
+    <div id="notification" class="notification"></div>
+
+    <div class="flex h-screen w-full items-center justify-center bg-background">
+        <div class="relative w-full max-w-md overflow-hidden rounded-lg bg-card shadow-lg">
+            <div
+                class="absolute inset-0 flex items-center justify-center bg-primary bg-opacity-50 backdrop-blur-sm welcome-message">
+                <div class="flex flex-col items-center space-y-4">
+                    <h2 class="text-3xl font-bold text-primary-foreground">¡Bienvenido a nuestra app!</h2>
+                    <p class="text-sm text-primary-foreground">Por favor, elige una opción para continuar.</p>
+                    <div class="flex space-x-4">
+                        <button class="button outline toggle-button" data-target=".sign-up-form">Registrarse</button>
+                        <button class="button outline toggle-button" data-target=".sign-in-form">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2">
+                <div class="bg-primary px-8 py-12 text-primary-foreground sign-up-form">
+                    <h2 class="mb-4 text-3xl font-bold">Registrarse</h2>
+                    <p class="mb-8 text-sm">Crea tu cuenta y empieza a usar nuestra increíble aplicación.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="label">Nombre</label>
+                            <input id="name" type="text" placeholder="Ingresa tu nombre" class="input" />
+                        </div>
+                        <div>
+                            <label for="email" class="label">Correo electrónico</label>
+                            <input id="email" type="email" placeholder="Ingresa tu correo electrónico" class="input" />
+                        </div>
+                        <div>
+                            <label for="password" class="label">Contraseña</label>
+                            <input id="password" type="password" placeholder="Ingresa tu contraseña" class="input" />
+                        </div>
+                        <button type="submit" class="button w-full">Registrarse</button>
+                    </form>
+                </div>
+                <div class="bg-card-foreground px-8 py-12 text-card sign-in-form">
+                    <h2 class="mb-4 text-3xl font-bold">Iniciar sesión</h2>
+                    <p class="mb-8 text-sm">¡Bienvenido de nuevo! Por favor ingresa tus credenciales para acceder a tu
+                        cuenta.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="email-signin" class="label">Correo electrónico</label>
+                            <input id="email-signin" type="email" placeholder="Ingresa tu correo electrónico"
+                                class="input" />
+                        </div>
+                        <div>
+                            <label for="password-signin" class="label">Contraseña</label>
+                            <input id="password-signin" type="password" placeholder="Ingresa tu contraseña"
+                                class="input" />
+                        </div>
+                        <button type="submit" class="button w-full">Iniciar sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Practicas/js/login2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/brujo.jpg')
+}
+
+.flex {
+    display: flex;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.bg-background {
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.relative {
+    position: relative;
+}
+
+.max-w-md {
+    max-width: 28rem;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.bg-card {
+    background-color: #fff;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bg-primary {
+    background-color: #512da8;
+}
+
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.text-primary-foreground {
+    color: #fff;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.space-y-4> :not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.input {
+    background-color: #eee;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    outline: none;
+}
+
+.button {
+    background-color: #512da8;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #5c6bc0;
+}
+
+.button.outline {
+    background-color: transparent;
+    border: 1px solid #512da8;
+    color: #512da8;
+}
+
+.button.outline:hover {
+    background-color: #512da8;
+    color: #fff;
+}
+
+.bg-card-foreground {
+    background-color: #f0f0f0;
+}
+
+.text-card {
+    color: #333;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bg-opacity-50 {
+    background-color: rgba(81, 45, 168, 0.5);
+    /* Opacidad del 50% */
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.space-y-4> :not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.flex.space-x-4> :not(:last-child) {
+    margin-right: 1rem;
+}
+
+.notification {
+    display: none;
+    /* Ocultado por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    z-index: 1000;
+    width: auto;
+    max-width: 90%;
+    color: #fff;
+}
+
+.notification.success {
+    background-color: #4caf50;
+    /* Verde */
+}
+
+.notification.error {
+    background-color: #f44336;
+    /* Rojo */
+}

@@ -1,0 +1,309 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  z-index: 2;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  position: relative;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  flex: 1;
+
+}
+
+.hero__title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  z-index: 1;
+}
+
+.cube {
+  z-index: 2;
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #512da8;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
+}
+
+.cube:nth-child(2n) {
+  border-color: #5d37b8;
+}
+
+.cube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+
+.cube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+.cube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+.cube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+
+.cube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+@-webkit-keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.bgnav {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff) !important;
+}
+
+.navbar a {
+  color: #512da8 !important;
+}
+
+.drophover {
+  background-color: #6c757d !important;
+
+
+}
+
+.drophover {
+  background-color: #212529 !important;
+
+}
+
+svg {
+  fill: #512da8;
+}
+
+.nav-item a:hover {
+  color: #fff;
+}
+
+svg:hover {
+  fill: #ffffff;
+}
+
+.titles {
+  color: #512da8;
+  z-index: 998;
+
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.bg-background {
+  background-color: #f9fafb;
+  /* Example background color */
+}
+
+.text-muted-foreground {
+  color: #6b7280;
+  /* Example muted color */
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #4a5568;
+  /* Color de fondo inicial */
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  /* Radio de borde */
+  cursor: pointer;
+  transition: background-color 0.3s ease box-shadow 0.3s ease;
+  /* Transición suave */
+}
+
+/* Estilo adicional para el tamaño pequeño del botón */
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Estilo para el estado hover */
+.btn:hover {
+
+  background-color: #512da8 !important;
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 10px #512da8 !important;
+
+}
+
+/*footer*/
+
+footer {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  padding: 20px;
+  margin-left: 12%;
+}
+
+.contact {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  padding: 20px;
+  display: flex;
+}
+
+.contact img {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 50%;
+  /* Ocupar la mitad del ancho */
+  max-width: 600px;
+  height: auto;
+  margin-right: 20px;
+  /* Espacio entre la imagen y el formulario */
+}
+
+.contact .form {
+  width: 50%;
+  /* Ocupar la mitad del ancho */
+  max-width: 600px;
+}
+
+.contact .form h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.contact .form .inputBx {
+  margin: 10px 0;
+}
+
+.contact .form .inputBx p {
+  color: #fff;
+}
+
+.contact .form .inputBx input,
+.contact .form .inputBx textarea {
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #1b2141;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.contact .form .inputBx input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 15px 0;
+  outline: none;
+  background: transparent;
+  border: 1px solid #512da8;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.contact .form .inputBx input[type="submit"]:hover {
+  background: #512da8;
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 10px #512da8;
+}
+
+.nav-link {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+img {
+  display: block;
+  /* Asegúrate de que cada imagen se trate como un bloque */
+  margin: 0 auto;
+  /* Centra la imagen horizontalmente */
+  max-width: 100%;
+  /* Asegúrate de que la imagen no se desborde de su contenedor */
+  height: auto;
+  /* Mantiene la relación de aspecto de la imagen */
+}
+
+.container {
+  display: flex;
+  /* Permite flexibilidad en el diseño */
+  flex-direction: column;
+  /* Coloca los elementos en una columna */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos verticalmente */
+  width: 100%;
+  /* Asegúrate de que ocupa todo el ancho */
+}

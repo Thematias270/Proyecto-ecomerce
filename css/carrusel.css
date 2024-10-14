@@ -1,0 +1,28 @@
+.carrusel {
+    width: 80% !important;
+    margin-left: 12%;
+    border-radius: 20px; /* Bordes redondeados para el carrusel */
+    padding-top: 10px;
+    overflow: hidden; /* Asegura que el contenido se recorte dentro del borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border: 2px solid #ddd; /* Borde gris claro */
+}
+
+.titulo {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro y semitransparente */
+    border-radius: 10px; /* Bordes redondeados más pequeños */
+    padding: 8px; /* Espaciado reducido */
+    text-align: center; /* Centra el texto */
+    color: #fff; /* Color del texto blanco para contraste */
+}
+
+.carousel-caption {
+    border-radius: 10px; /* Bordes redondeados más pequeños para el texto de la imagen */
+    padding: 8px; /* Espaciado reducido */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro y semitransparente */
+    color: #fff; /* Color del texto blanco para contraste */
+}
+
+.carousel-item img {
+    border-radius: 20px; /* Bordes redondeados para las imágenes del carrusel */
+}
