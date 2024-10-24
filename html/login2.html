@@ -103,6 +103,12 @@
     </div>
 
     <script src="../js/login3.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('logout') === 'success') {
+            alert("Has cerrado sesión exitosamente.");
+        }
+    </script>
 </body>
 
 </html>

@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Inserta el producto en la base de datos
             $query = "INSERT INTO productos (nombre, descripcion, precio, imagen) VALUES ('$nombre', '$descripcion', '$precio', '$rutaImagen')";
             if (mysqli_query($conexion, $query)) {
+                header('Location: ../index.php');
                 echo "Producto agregado correctamente!!";
             } else {
                 echo "Error al agregar el producto: " . mysqli_error($conexion); // Corrige el error de mysqli_query
@@ -40,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Producto</title>
-    <link rel="stylesheet" href="path/to/tu/stylesheet.css"> <!-- Incluye tu CSS aquí -->
+    <!-- <link rel="stylesheet" href="path/to/tu/stylesheet.css">  -->
 </head>
 <body>
     <div class="container">

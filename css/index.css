@@ -307,3 +307,22 @@ img {
   width: 100%;
   /* Asegúrate de que ocupa todo el ancho */
 }
+
+.search-results {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  /* Para que los resultados sean desplazables si son muchos */
+  border-radius: 5px;
+}
+
+.search-results .card {
+  margin-bottom: 10px;
+}
+
+.search-results .card img {
+  height: 150px;
+  object-fit: cover;
+}
