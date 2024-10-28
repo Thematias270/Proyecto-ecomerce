@@ -304,7 +304,7 @@ img {
   /* Centra los elementos horizontalmente */
   justify-content: center;
   /* Centra los elementos verticalmente */
-  width: 100%;
+  /*width: 100%;*/
   /* Asegúrate de que ocupa todo el ancho */
 }
 
@@ -344,4 +344,10 @@ form input[type="search"]:focus {
 #search-results .card img {
   height: 10px;
   object-fit: cover;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

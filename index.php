@@ -60,7 +60,7 @@ if($autenticado){
                 <?php endif; ?>
             </div>
 
-        <!-- Formulario de búsqueda con AJAX -->
+        <!-- Formulario de búsqueda -->
         <form class="d-flex ms-auto bg-white rounded-lg shadow p-2" id="search-form">
             <input class="form-control me-2 border-0 rounded-start" type="search" name="query" id="search-input" placeholder="Buscar productos o descripciones..." aria-label="Buscar" style="background-color: #f0f0f0;">
             <button class="btn btn-primary rounded-end" type="submit">Buscar</button>

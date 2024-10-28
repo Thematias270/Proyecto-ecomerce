@@ -9,8 +9,7 @@ if (isset($_GET['query'])) {
     $resultado = mysqli_query($conexion, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
-        echo "<div class='container'>
-                <section class='grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:p-6'>";
+        echo "<section class='grid grid-cols-1 gap-6 p-4'>";
 
         while ($row = mysqli_fetch_assoc($resultado)) {
             echo "
@@ -28,11 +27,11 @@ if (isset($_GET['query'])) {
             ";
         }
 
-        echo "    </section>
-              </div>";
+        echo "</section>";
     } else {
         echo "<p>No se encontraron resultados para '$query'</p>";
     }
+    echo "</div>";
 } else {
     echo "<p>Por favor, ingrese un término de búsqueda.</p>";
 }
