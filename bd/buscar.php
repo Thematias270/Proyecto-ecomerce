@@ -16,7 +16,7 @@ if(isset($_GET['query'])){
 
         while($row = mysqli_fetch_assoc($resultado)){
             echo "
-            <div class='col-md-4>
+            <div class='col-md-4'>
                 <div class='card mb-4'>
                     <img src='" .$row['imagen'] . "' class='card-img-top' alt='" . $row['nombre'] . "'>
                     <div class=' card-body'>
