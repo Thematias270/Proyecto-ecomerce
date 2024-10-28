@@ -1,43 +1,39 @@
 <?php
-
 include('conexion.php');
 
-if(isset($_GET['query'])){
+if (isset($_GET['query'])) {
     $query = $_GET['query'];
-
-    $query = mysqli_real_escape_string($conexion,$query);
+    $query = mysqli_real_escape_string($conexion, $query);
 
     $sql = "SELECT * FROM productos WHERE nombre LIKE '%$query%' OR descripcion LIKE '%$query%'";
-    $resultado = mysqli_query($conexion,$sql);
+    $resultado = mysqli_query($conexion, $sql);
 
-    if(mysqli_num_rows($resultado) > 0){
-        echo "<h2> Resultados para '$query':</h2>";
-        echo "<div class='row'>";
+    if (mysqli_num_rows($resultado) > 0) {
+        echo "<div class='container'>
+                <section class='grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:p-6'>";
 
-        while($row = mysqli_fetch_assoc($resultado)){
+        while ($row = mysqli_fetch_assoc($resultado)) {
             echo "
-            <div class='col-md-4'>
-                <div class='card mb-4'>
-                    <img src='" .$row['imagen'] . "' class='card-img-top' alt='" . $row['nombre'] . "'>
-                    <div class=' card-body'>
-                        <h5 class='card-title'>" . $row['nombre'] . "</h5>
-                        <p class='card-text'>" . substr($row['descripcion'], 0, 100) . "...</p>
-                        <a href='producto.php?id=" . $row['id'] . "' class='btn btn-primary'>Ver más</a>
+            <div class='relative overflow-hidden rounded-lg group'>
+                <img src='bd/uploads/" . htmlspecialchars(basename($row['imagen'])) . "' alt='Imagen del producto' class='object-cover w-full h-60'>
+                <div class='p-4 bg-background'>
+                    <h3 class='text-lg font-semibold md:text-xl'>" . htmlspecialchars($row['nombre']) . "</h3>
+                    <p class='text-sm text-muted-foreground'>" . htmlspecialchars($row['descripcion']) . "</p>
+                    <div class='flex items-center justify-between'>
+                        <h4 class='text-base font-semibold md:text-lg'>$" . htmlspecialchars($row['precio']) . "</h4>
+                        <button class='btn btn-sm add-to-cart'>Agregar al carrito</button>
                     </div>
                 </div>
             </div>
             ";
         }
 
-        echo "</div>";
-    }else{
-        echo "<h2> No se encontraron resultados para '$query'</h2>";
+        echo "    </section>
+              </div>";
+    } else {
+        echo "<p>No se encontraron resultados para '$query'</p>";
     }
-}else{
-    echo "<h2>Por favor, ingrese un término de búsqueda.</h2>";
+} else {
+    echo "<p>Por favor, ingrese un término de búsqueda.</p>";
 }
-
-
-
-
 ?>

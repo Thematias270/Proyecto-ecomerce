@@ -60,12 +60,16 @@ if($autenticado){
                 <?php endif; ?>
             </div>
 
-            <!-- Formulario de búsqueda alineado a la derecha -->
-            <form class="d-flex ms-auto" role="search" method="GET" action="./bd/buscar.php">
-                <input class="form-control me-2" type="search" name="query" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-            <div id="search-results" class="mt-3"></div>
+        <!-- Formulario de búsqueda con AJAX -->
+        <form class="d-flex ms-auto bg-white rounded-lg shadow p-2" id="search-form">
+            <input class="form-control me-2 border-0 rounded-start" type="search" name="query" id="search-input" placeholder="Buscar productos o descripciones..." aria-label="Buscar" style="background-color: #f0f0f0;">
+            <button class="btn btn-primary rounded-end" type="submit">Buscar</button>
+        </form>
+
+        <!-- Div para mostrar los resultados debajo del campo de búsqueda -->
+        <div id="search-results" class="mt-3" style="display: none;"></div>
+
+
 
 
             <!-- Ícono de perfil alineado a la derecha -->
@@ -184,9 +188,9 @@ if($autenticado){
     </div>
 </div>
 
+<script src="./js/index2.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./js/carrusel.js"></script>
-<script src="./js/index.js"></script>
+<!-- <script src="./js/carrusel.js"></script> -->
 </body>
 </html>

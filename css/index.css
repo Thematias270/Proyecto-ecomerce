@@ -308,21 +308,40 @@ img {
   /* Asegúrate de que ocupa todo el ancho */
 }
 
-.search-results {
+/* Estilos del formulario de búsqueda */
+form.d-flex {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form input[type="search"] {
+  transition: background-color 0.3s ease;
+}
+
+form input[type="search"]:focus {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de los resultados de búsqueda */
+#search-results {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   padding: 15px;
   max-height: 400px;
   overflow-y: auto;
-  /* Para que los resultados sean desplazables si son muchos */
   border-radius: 5px;
+  position: bottom;
+  width: 100%;
+  z-index: 1000;
 }
 
-.search-results .card {
+#search-results .card {
   margin-bottom: 10px;
 }
 
-.search-results .card img {
-  height: 150px;
+#search-results .card img {
+  height: 10px;
   object-fit: cover;
 }
