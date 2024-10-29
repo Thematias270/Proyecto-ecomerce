@@ -132,40 +132,40 @@ if($autenticado){
             </button>
         </div>
 
-        <!-- Productos listados -->
-        <div class="container">
-            <section class="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:p-6">
-                <?php foreach ($productos as $producto) : ?>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="bd/uploads/<?php echo htmlspecialchars(basename($producto['imagen'])); ?>" alt="Imagen del producto" class="object-cover w-full h-60">
-                        <div class="p-4 bg-background">
-                            <h3 class="text-lg font-semibold md:text-xl"><?php echo htmlspecialchars($producto['nombre']); ?></h3>
-                            <p class="text-sm text-muted-foreground"><?php echo htmlspecialchars($producto['descripcion']); ?></p>
-                            <div class="flex items-center justify-between">
-                                <h4 class="text-base font-semibold md:text-lg">$<?php echo htmlspecialchars($producto['precio']); ?></h4>
-                                <button class="btn btn-sm add-to-cart">Agregar al carrito</button>
-                            </div>
-                            <?php if($isAdmin):?>
-                                <div class="mt-4 flex justify-between">
-                                    <a href="./bd/editar_producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-sm btn-edit">Editar</a>
-                                    <a href="./bd/eliminar_producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-sm btn-delete" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
-                                </div>
-                            <?php endif;?>
-                        </div>
+<!-- Productos listados -->
+<div class="container">
+    <section class="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:p-6">
+        <?php foreach ($productos as $producto) : ?>
+            <div class="relative overflow-hidden rounded-lg group" data-id="<?php echo $producto['id']; ?>">
+                <img src="bd/uploads/<?php echo htmlspecialchars(basename($producto['imagen'])); ?>" alt="Imagen del producto" class="object-cover w-full h-60">
+                <div class="p-4 bg-background">
+                    <h3 class="text-lg font-semibold md:text-xl"><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+                    <p class="text-sm text-muted-foreground"><?php echo htmlspecialchars($producto['descripcion']); ?></p>
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-base font-semibold md:text-lg">$<?php echo htmlspecialchars($producto['precio']); ?></h4>
+                        <button class="btn btn-sm add-to-cart">Agregar al carrito</button>
                     </div>
-                <?php endforeach; ?>
-            </section>
-        </div>
-
-        <!-- Carrito de compras -->
-        <div class="cart fixed bottom-0 right-0 p-6 bg-white shadow-lg rounded-lg carrito">
-            <h2 class="text-xl font-semibold mb-4">Carrito de Compras</h2>
-            <ul id="cart-items" class="mb-4"></ul>
-            <div class="flex justify-between items-center">
-                <span class="text-lg font-semibold">Total: $<span id="cart-total">0.00</span></span>
-                <button class="btn btn-primary">Comprar</button>
+                    <?php if ($isAdmin) : ?>
+                        <div class="mt-4 flex justify-between">
+                            <a href="./bd/editar_producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-sm btn-edit">Editar</a>
+                            <a href="./bd/eliminar_producto.php?id=<?php echo $producto['id']; ?>" class="btn btn-sm btn-delete" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+    </section>
+</div>
+
+<!-- Carrito de compras -->
+<div class="cart fixed bottom-0 right-0 p-6 bg-white shadow-lg rounded-lg carrito">
+    <h2 class="text-xl font-semibold mb-4">Carrito de Compras</h2>
+    <ul id="cart-items" class="mb-4"></ul>
+    <div class="flex justify-between items-center">
+        <span class="text-lg font-semibold">Total: $<span id="cart-total">0.00</span></span>
+        <button class="btn btn-primary">Comprar</button>
+    </div>
+</div>
         
         <!-- Pie de página (Contacto) -->
         <footer>
@@ -194,6 +194,8 @@ if($autenticado){
     </div>
 </div>
 
+
+<script src="./js/carrito.js"></script>
 <script src="./js/index2.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
