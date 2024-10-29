@@ -326,14 +326,9 @@ form input[type="search"]:focus {
 
 /* Estilos de los resultados de búsqueda */
 #search-results {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
   padding: 15px;
   max-height: 400px;
-  overflow-y: auto;
   border-radius: 5px;
-  position: bottom;
-  width: 100%;
   z-index: 1000;
 }
 
