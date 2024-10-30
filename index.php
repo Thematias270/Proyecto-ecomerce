@@ -3,7 +3,7 @@ session_start();
 require 'bd/conexion.php'; // Conectar a la base de datos
 
 // Consulta para obtener los productos
-$query = "SELECT * FROM productos";
+$query = "SELECT * FROM productos ORDER BY nombre ASC";
 $resultado = mysqli_query($conexion, $query);
 
 if ($resultado) {
@@ -33,7 +33,7 @@ if($autenticado){
     <title>Gestión de Productos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/carrusel.css">
-    <link rel="stylesheet" href="./css/index2.css">
+    <link rel="stylesheet" href="./css/index3.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
@@ -67,7 +67,7 @@ if($autenticado){
         </form>
 
         <!-- Div para mostrar los resultados debajo del campo de búsqueda -->
-        <div id="search-results" class="mt-3" style="display: none;"></div>
+        <!-- <div id="search-results" class="mt-3" style="display: none;"></div> -->
 
 
 
@@ -90,6 +90,8 @@ if($autenticado){
 </nav>
 
 <div class="hero">
+                <!-- Div para mostrar los resultados debajo del campo de búsqueda -->
+                <div id="search-results" class="mt-3" style="display: none;"></div>
     <div class="carrusel">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -140,7 +142,9 @@ if($autenticado){
                 <img src="bd/uploads/<?php echo htmlspecialchars(basename($producto['imagen'])); ?>" alt="Imagen del producto" class="object-cover w-full h-60">
                 <div class="p-4 bg-background">
                     <h3 class="text-lg font-semibold md:text-xl"><?php echo htmlspecialchars($producto['nombre']); ?></h3>
-                    <p class="text-sm text-muted-foreground"><?php echo htmlspecialchars($producto['descripcion']); ?></p>
+                    <p class="text-sm text-muted-foreground description">
+                        <?php echo htmlspecialchars($producto['descripcion']); ?>
+                    </p>
                     <div class="flex items-center justify-between">
                         <h4 class="text-base font-semibold md:text-lg">$<?php echo htmlspecialchars($producto['precio']); ?></h4>
                         <button class="btn btn-sm add-to-cart">Agregar al carrito</button>
@@ -157,15 +161,18 @@ if($autenticado){
     </section>
 </div>
 
+
+
 <!-- Carrito de compras -->
 <div class="cart fixed bottom-0 right-0 p-6 bg-white shadow-lg rounded-lg carrito">
     <h2 class="text-xl font-semibold mb-4">Carrito de Compras</h2>
     <ul id="cart-items" class="mb-4"></ul>
     <div class="flex justify-between items-center">
         <span class="text-lg font-semibold">Total: $<span id="cart-total">0.00</span></span>
-        <button class="btn btn-primary">Comprar</button>
+        <button id="btn-comprar"class="btn btn-primary">Comprar</button>
     </div>
 </div>
+
         
         <!-- Pie de página (Contacto) -->
         <footer>
@@ -196,7 +203,7 @@ if($autenticado){
 
 
 <script src="./js/carrito.js"></script>
-<script src="./js/index2.js"></script>
+<script src="./js/index3.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="./js/carrusel.js"></script> -->

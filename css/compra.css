@@ -1,0 +1,32 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Espaciado entre los elementos */
+    padding: 20px;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    /* Borde alrededor de cada producto */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interno */
+    width: calc(33.333% - 20px);
+    /* Tres productos por fila */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.product-image {
+    width: 100%;
+    /* Imagen que ocupa el 100% del contenedor */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+}
+
+.product-info {
+    text-align: center;
+    /* Centrar el texto */
+}

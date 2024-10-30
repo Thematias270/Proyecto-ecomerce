@@ -17,7 +17,7 @@ if (isset($_GET['query'])) {
                 <img src='bd/uploads/" . htmlspecialchars(basename($row['imagen'])) . "' alt='Imagen del producto' class='object-cover w-full h-60'>
                 <div class='p-4 bg-background'>
                     <h3 class='text-lg font-semibold md:text-xl'>" . htmlspecialchars($row['nombre']) . "</h3>
-                    <p class='text-sm text-muted-foreground'>" . htmlspecialchars($row['descripcion']) . "</p>
+                    
                     <div class='flex items-center justify-between'>
                         <h4 class='text-base font-semibold md:text-lg'>$" . htmlspecialchars($row['precio']) . "</h4>
                         <button class='btn btn-sm add-to-cart'>Agregar al carrito</button>
@@ -36,3 +36,4 @@ if (isset($_GET['query'])) {
     echo "<p>Por favor, ingrese un término de búsqueda.</p>";
 }
 ?>
+<!-- <p class='text-sm text-muted-foreground'>" . htmlspecialchars($row['descripcion']) . "</p> -->

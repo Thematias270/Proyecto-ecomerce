@@ -15,3 +15,24 @@ document.getElementById('search-input').addEventListener('input', function () {
         document.getElementById('search-results').style.display = 'none'; // Ocultar resultados si no hay texto
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productos = document.querySelectorAll('.group');
+
+    productos.forEach(producto => {
+        producto.addEventListener('mouseover', () => {
+            const description = producto.querySelector('.description');
+            if (description) {
+                description.classList.add('show');
+            }
+        });
+
+        producto.addEventListener('mouseout', () => {
+            const description = producto.querySelector('.description');
+            if (description) {
+                description.classList.remove('show');
+            }
+        });
+    });
+});

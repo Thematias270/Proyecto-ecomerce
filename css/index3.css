@@ -326,23 +326,52 @@ form input[type="search"]:focus {
 
 /* Estilos de los resultados de búsqueda */
 #search-results {
-  padding: 15px;
-  max-height: 400px;
+  padding: 0;
+  /* max-height: 200px; */
   border-radius: 5px;
   z-index: 1000;
+  width: 30%;
+  top: 100%;
+  margin-left: 35%;
 }
 
-#search-results .card {
-  margin-bottom: 10px;
+@media screen and (max-width:767px) {
+  #search-results {
+    width: 100%;
+    margin-left: 1%;
+  }
 }
+
+
+/* #search-results .card {
+  margin-bottom: 50px;
+} */
 
 #search-results .card img {
-  height: 10px;
+  height: 300px;
   object-fit: cover;
 }
 
 .search-bar {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-height: 0;
+  /* Oculto inicialmente */
+  opacity: 0;
+  /* Invisible al principio */
+  overflow: hidden;
+  /* Oculta el contenido que desborda */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  /* Transiciones para altura y opacidad */
+}
+
+.show {
+  max-height: 200px;
+  /* Ajusta este valor según sea necesario */
+  opacity: 1;
+  /* Totalmente visible */
 }
