@@ -43,12 +43,12 @@ if($autenticado){
         <!-- <a class="navbar-brand" href="#">Cyber</a> -->
 
         <!-- Botón de menú colapsable -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
 
         <!-- Elementos colapsables del menú -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="#">Cyber</a>
                 <?php if(isset($_SESSION['usuario'])): ?>
@@ -97,31 +97,31 @@ if($autenticado){
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./img/brujo.jpg" class="d-block w-100" alt="Imagen 1">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Título 1</h5>
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>The Witcher 3</h5>
                         <p>Descripción de la imagen 1.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="carousel-item">
                     <img src="./img/cyberpunk4k.jpg" class="d-block w-100" alt="Imagen 2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Título 2</h5>
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>CyberPunk 2077</h5>
                         <p>Descripción de la imagen 2.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="carousel-item">
                     <img src="./img/dias.jpg" class="d-block w-100" alt="Imagen 3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Título 3</h5>
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>Days Gone</h5>
                         <p>Descripción de la imagen 3.</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="carousel-item">
                     <img src="./img/kratos4k.jpg" class="d-block w-100" alt="Imagen 4">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Título 4</h5>
+                    <!-- <div class="carousel-caption d-none d-md-block">
+                        <h5>God Of War Ragnarok</h5>
                         <p>Descripción de la imagen 4.</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">

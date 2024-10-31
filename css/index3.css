@@ -365,7 +365,7 @@ form input[type="search"]:focus {
   /* Invisible al principio */
   overflow: hidden;
   /* Oculta el contenido que desborda */
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 1s ease, opacity 3s ease;
   /* Transiciones para altura y opacidad */
 }
 
