@@ -5,18 +5,21 @@ session_start();
 if (isset($_GET['nombre']) && !empty($_GET['nombre'])) {
     $cart = [];
     foreach ($_GET['nombre'] as $key => $value) {
+        // Obtener nombre de la imagen, extrayendo solo el archivo si viene una URL completa
+        $imagen = isset($_GET['imagen'][$key]) ? htmlspecialchars($_GET['imagen'][$key]) : '';
+        $imagenNombre = $imagen ? basename(parse_url($imagen, PHP_URL_PATH)) : '';
+
         $cart[] = [
             'nombre' => htmlspecialchars($value),
             'precio' => htmlspecialchars($_GET['precio'][$key]),
             'cantidad' => htmlspecialchars($_GET['cantidad'][$key]),
-            'imagen' => isset($_GET['imagen'][$key]) ? htmlspecialchars($_GET['imagen'][$key]) : '' // Manejar el caso donde no se pasa la imagen
+            'imagen' => $imagenNombre
         ];
     }
     $_SESSION['cart'] = $cart; // Almacenar el carrito en la sesión
 } else {
     $_SESSION['cart'] = [];
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +40,16 @@ if (isset($_GET['nombre']) && !empty($_GET['nombre'])) {
                 $itemTotal = $item['precio'] * $item['cantidad'];
                 $total += $itemTotal;
 
-                // Verificar si la imagen existe
-                $imagePath = "../bd/uploads/" . htmlspecialchars($item['imagen']);
+                // Ruta física para validar si existe la imagen
+                $imageName = htmlspecialchars($item['imagen']);
+                $imagePath = __DIR__ . "/uploads/" . $imageName;
+
+                // Ruta para mostrar la imagen en el navegador
+                $imageSrc = "../bd/uploads/" . $imageName;
             ?>
                 <div class="product-item">
-                    <?php if (file_exists($imagePath)): ?>
-                        <img src="<?php echo $imagePath; ?>" alt="<?php echo htmlspecialchars($item['nombre']); ?>" class="product-image">
+                    <?php if (!empty($imageName) && file_exists($imagePath)): ?>
+                        <img src="<?php echo $imageSrc; ?>" alt="<?php echo htmlspecialchars($item['nombre']); ?>" class="product-image">
                     <?php else: ?>
                         <p>La imagen no existe: <?php echo htmlspecialchars($item['imagen']); ?></p>
                     <?php endif; ?>
