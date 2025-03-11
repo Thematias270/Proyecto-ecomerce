@@ -17,8 +17,8 @@ if ($resultado) {
 }
 
 $autenticado = isset($_SESSION['usuario']);
-$isAdmin = false;
 
+$isAdmin = false;
 // Verificar si el usuario es administrador
 if($autenticado){
     $isAdmin = ($_SESSION['rol'] === 'admin');
