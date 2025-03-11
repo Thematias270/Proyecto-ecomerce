@@ -15,6 +15,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Las contraseñas no coinciden.";
             exit;
         }
+         // Validaciones de la contraseña
+         $password_valid = true;
+         $errors = [];
+ 
+         // Longitud mínima de la contraseña
+         if (strlen($password) < 8) {
+             $password_valid = false;
+             $errors[] = "La contraseña debe tener al menos 8 caracteres.";
+         }
+ 
+         // Debe incluir al menos una letra mayúscula
+         if (!preg_match('/[A-Z]/', $password)) {
+             $password_valid = false;
+             $errors[] = "La contraseña debe incluir al menos una letra mayúscula.";
+         }
+ 
+         // Debe incluir al menos una letra minúscula
+         if (!preg_match('/[a-z]/', $password)) {
+             $password_valid = false;
+             $errors[] = "La contraseña debe incluir al menos una letra minúscula.";
+         }
+ 
+         // Debe incluir al menos un número
+         if (!preg_match('/[0-9]/', $password)) {
+             $password_valid = false;
+             $errors[] = "La contraseña debe incluir al menos un número.";
+         }
+ 
+         // Debe incluir al menos un carácter especial
+         if (!preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password)) {
+             $password_valid = false;
+             $errors[] = "La contraseña debe incluir al menos un carácter especial.";
+         }
+ 
+         if (!$password_valid) {
+             echo "Errores de validación de contraseña:<br>";
+             foreach ($errors as $error) {
+                 echo $error . "<br>";
+             }
+             exit;
+         }
 
         // Verificar si el email ya está registrado
         $query = "SELECT * FROM usuarios WHERE email = ?";
