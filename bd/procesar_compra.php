@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $direccion = $_POST['direccion'];
     $email = $_POST['email'];
     
-    // Aquí puedes agregar lógica para guardar la compra en la base de datos,
+    // agregar lógica para guardar la compra en la base de datos,
     // enviar un correo electrónico al usuario, etc.
     
     // Ejemplo de inserción en la base de datos (ajusta según tu estructura):

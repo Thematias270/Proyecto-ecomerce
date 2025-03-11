@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($stmt->execute()) {
                 echo "Usuario registrado correctamente.";
-                // Opcionalmente, redirigir a la página de inicio de sesión
                 header('Location: ../index.php');
             } else {
                 echo "Error al registrar el usuario.";
